@@ -14,3 +14,9 @@ class Mago:
     
     def __eq__(self, otro):
         return self.nombre == otro.nombre and self.hechizos == otro.hechizos
+
+    def __add__(self, otro):
+        if isinstance(otro, Mago):
+            return Mago(f"{self.nombre}-{otro.nombre}")
+        else:
+            raise TypeError('Solo puedes combinar dos magos ')
